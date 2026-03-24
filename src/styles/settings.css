@@ -1,0 +1,311 @@
+.settings-page {
+  position: relative;
+  min-height: calc(100vh - 64px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(255, 104, 72, 0.14), transparent 26%),
+    radial-gradient(circle at 88% 10%, rgba(85, 165, 255, 0.12), transparent 24%),
+    linear-gradient(180deg, #07111d 0%, #0d1827 50%, #132338 100%);
+  color: #edf4fd;
+}
+
+.settings-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 94%);
+  pointer-events: none;
+}
+
+.settings-shell {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 18px 32px;
+}
+
+.settings-banner,
+.settings-sidebar-card,
+.settings-card,
+.status-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(12, 20, 33, 0.94), rgba(24, 35, 54, 0.84));
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+.settings-banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  margin-bottom: 16px;
+  border-radius: 20px;
+}
+
+.settings-banner-copy {
+  max-width: 640px;
+}
+
+.settings-kicker,
+.card-kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9bb8dd;
+}
+
+.settings-banner h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.98;
+}
+
+.settings-banner p {
+  margin: 0;
+  color: #afbdd1;
+  line-height: 1.6;
+}
+
+.settings-actions {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.settings-btn {
+  min-height: 42px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.settings-btn.primary {
+  background: linear-gradient(135deg, #ff7d51, #d54b30);
+  color: #fff7f2;
+}
+
+.settings-btn.secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #edf4fd;
+}
+
+.settings-status-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.status-card {
+  padding: 14px 16px;
+  border-radius: 16px;
+}
+
+.status-card.saved {
+  background: linear-gradient(135deg, rgba(52, 134, 92, 0.24), rgba(24, 35, 54, 0.84));
+}
+
+.status-card span {
+  display: block;
+  margin-bottom: 6px;
+  color: #8ea6bd;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.status-card strong {
+  font-size: 1.08rem;
+}
+
+.settings-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.settings-sidebar-card {
+  padding: 16px;
+  border-radius: 18px;
+  align-self: start;
+}
+
+.settings-sidebar-card h2 {
+  margin: 8px 0 10px;
+}
+
+.settings-sidebar-card p {
+  margin: 0;
+  color: #afbdd1;
+  line-height: 1.6;
+}
+
+.focus-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.focus-pill {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.focus-pill span {
+  display: block;
+  margin-bottom: 6px;
+  color: #8ea6bd;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.focus-pill strong {
+  font-size: 1rem;
+}
+
+.settings-main {
+  display: grid;
+  gap: 16px;
+}
+
+.settings-card {
+  padding: 16px;
+  border-radius: 18px;
+}
+
+.settings-card-head {
+  margin-bottom: 14px;
+}
+
+.settings-card-head h2 {
+  margin: 6px 0 0;
+  font-size: 1.05rem;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.settings-field {
+  display: grid;
+  gap: 8px;
+}
+
+.settings-field span {
+  color: #9fb3c7;
+  font-size: 0.86rem;
+}
+
+.settings-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-height: 46px;
+  padding: 11px 44px 11px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M3.25 5.25L7 9l3.75-3.75' fill='none' stroke='%23edf4fd' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+  color: #edf4fd;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.settings-field select {
+  background-color: rgba(14, 24, 38, 0.96);
+}
+
+.settings-field select:hover {
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.settings-field select:focus {
+  outline: none;
+  border-color: rgba(255, 125, 81, 0.85);
+  box-shadow: 0 0 0 3px rgba(255, 125, 81, 0.16);
+}
+
+.settings-field select option {
+  color: #edf4fd;
+  background: #132234;
+}
+
+.settings-field select::-ms-expand {
+  display: none;
+}
+
+.toggle-list {
+  display: grid;
+  gap: 12px;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.toggle-row strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.toggle-row p {
+  margin: 0;
+  color: #aebcd0;
+  line-height: 1.5;
+}
+
+@media (max-width: 980px) {
+  .settings-banner,
+  .settings-status-row,
+  .settings-layout,
+  .field-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+}
+
+@media (max-width: 720px) {
+  .settings-shell {
+    padding: 16px 12px 24px;
+  }
+
+  .settings-banner,
+  .settings-sidebar-card,
+  .settings-card,
+  .status-card {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .settings-actions {
+    flex-wrap: wrap;
+  }
+
+  .settings-btn {
+    width: 100%;
+  }
+
+  .toggle-row {
+    align-items: flex-start;
+  }
+}

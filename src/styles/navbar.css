@@ -1,0 +1,77 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  height: 64px;
+  width: 100%;
+  background: linear-gradient(180deg, #0b1626, #071120);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  width: 26px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #ffffff;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+/* ===== SEARCH ===== */
+.nav-search {
+  width: 360px;   /* 🔥 wider */
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.nav-search::placeholder {
+  color: #b0bccb;
+}
+
+/* ===== DROPDOWN MENU ===== */
+.nav-menu {
+  position: absolute;
+  top: 64px;
+  left: 16px;
+  background: linear-gradient(145deg, #0f2238, #081424);
+  border-radius: 12px;
+  width: 200px;
+  padding: 10px 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  z-index: 999;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 12px 18px;
+  color: #cfd8e3;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-menu a:hover {
+  background: rgba(255,255,255,0.06);
+  color: #ffffff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav-search {
+    width: 220px;
+  }
+}

@@ -1,0 +1,340 @@
+.reports-page {
+  position: relative;
+  min-height: calc(100vh - 64px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(255, 104, 72, 0.14), transparent 26%),
+    radial-gradient(circle at 88% 10%, rgba(85, 165, 255, 0.12), transparent 24%),
+    linear-gradient(180deg, #07111d 0%, #0d1827 50%, #132338 100%);
+  color: #edf4fd;
+}
+
+.reports-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 94%);
+  pointer-events: none;
+}
+
+.reports-shell {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 18px 34px;
+}
+
+.reports-hero,
+.report-panel,
+.report-card {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(20, 26, 35, 0.96), rgba(26, 34, 45, 0.92));
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.reports-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 340px;
+  gap: 18px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  border-radius: 18px;
+}
+
+.reports-hero-copy {
+  padding-right: 10px;
+}
+
+.reports-kicker,
+.panel-kicker,
+.card-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9bb8dd;
+}
+
+.reports-hero h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(1.9rem, 3vw, 2.85rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: #f7fbff;
+}
+
+.reports-hero p {
+  margin: 0;
+  max-width: 650px;
+  color: #afbdd1;
+  line-height: 1.6;
+}
+
+.reports-side-meta {
+  display: grid;
+  gap: 10px;
+}
+
+.report-meta-card {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.report-meta-card span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #97a8be;
+}
+
+.report-meta-card strong {
+  color: #f7fbff;
+  font-size: 1rem;
+}
+
+.reports-actions {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.reports-btn {
+  min-height: 42px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reports-btn.primary {
+  background: linear-gradient(135deg, #ff7d51, #d54b30);
+  color: #fff7f2;
+}
+
+.reports-btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #edf4fd;
+}
+
+.reports-summary-grid,
+.reports-grid,
+.country-brief-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.reports-summary-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
+.report-card {
+  padding: 14px 16px;
+  border-radius: 14px;
+}
+
+.report-card strong {
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 1.25rem;
+  color: #f6fbff;
+}
+
+.report-card p {
+  margin: 0;
+  color: #aab7c6;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.report-card.highlight {
+  background: linear-gradient(135deg, rgba(255, 122, 83, 0.24), rgba(24, 35, 54, 0.84));
+}
+
+.report-card.warm {
+  background: linear-gradient(135deg, rgba(196, 135, 82, 0.2), rgba(24, 35, 54, 0.84));
+}
+
+.reports-grid {
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.8fr);
+  margin-bottom: 14px;
+}
+
+.report-panel {
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.report-panel.wide {
+  min-width: 0;
+}
+
+.panel-top {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.panel-top h2 {
+  margin: 6px 0 0;
+  font-size: 1rem;
+  color: #f6fbff;
+}
+
+.report-list {
+  display: grid;
+  gap: 8px;
+}
+
+.report-list.compact {
+  gap: 8px;
+}
+
+.report-row,
+.brief-card,
+.recommendation-item {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.report-row {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 11px 13px;
+}
+
+.row-rank {
+  color: #ff9d84;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.row-country {
+  font-weight: 600;
+  color: #edf3fc;
+}
+
+.row-value {
+  color: #ffd7c7;
+  font-weight: 700;
+}
+
+.recommendation-list,
+.notes-list {
+  display: grid;
+  gap: 10px;
+}
+
+.recommendation-item {
+  padding: 13px;
+  color: #d0d9e5;
+  line-height: 1.55;
+  position: relative;
+}
+
+.recommendation-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 12px 0 0 12px;
+  background: linear-gradient(180deg, #ff7d51, #768ca8);
+}
+
+.country-brief-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.brief-card {
+  padding: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.035)),
+    rgba(255, 255, 255, 0.02);
+}
+
+.brief-card h3 {
+  margin: 0 0 12px;
+  color: #f6fbff;
+}
+
+.brief-copy {
+  margin: 0 0 12px;
+  color: #b8c4d3;
+  line-height: 1.55;
+  font-size: 0.92rem;
+}
+
+.brief-metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.brief-metric:first-of-type {
+  border-top: 0;
+}
+
+.brief-metric span {
+  color: #9eb0ca;
+}
+
+.brief-metric strong {
+  color: #f7fbff;
+}
+
+.notes-list p,
+.empty-copy {
+  margin: 0;
+  color: #c2cedc;
+  line-height: 1.6;
+}
+
+@media (max-width: 1080px) {
+  .reports-summary-grid,
+  .country-brief-grid,
+  .reports-grid,
+  .reports-hero {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .reports-actions {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 720px) {
+  .reports-shell {
+    padding: 16px 12px 24px;
+  }
+
+  .reports-hero,
+  .report-panel,
+  .report-card {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .reports-actions {
+    flex-wrap: wrap;
+  }
+
+  .reports-btn {
+    width: 100%;
+  }
+}
