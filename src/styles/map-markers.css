@@ -23,19 +23,19 @@
 .pulse-glow {
   inset: -12%;
   background:
-    radial-gradient(circle, rgba(143, 8, 24, 0.24) 0%, rgba(120, 6, 20, 0.14) 48%, rgba(120, 6, 20, 0) 100%);
+    radial-gradient(circle, rgba(175, 12, 33, 0.28) 0%, rgba(145, 8, 26, 0.18) 48%, rgba(145, 8, 26, 0) 100%);
   filter: blur(4px);
-  opacity: 0.68;
+  opacity: 0.78;
 }
 
 .pulse-core {
   background:
-    radial-gradient(circle, rgba(230, 84, 101, 0.98) 0%, rgba(186, 22, 43, 0.99) 34%, rgba(138, 7, 23, 1) 74%, rgba(92, 2, 14, 1) 100%);
-  border: 1px solid rgba(255, 183, 193, 0.18);
+    radial-gradient(circle, rgba(236, 92, 108, 0.99) 0%, rgba(198, 24, 47, 1) 34%, rgba(147, 7, 26, 1) 74%, rgba(98, 2, 16, 1) 100%);
+  border: 1px solid rgba(255, 176, 187, 0.22);
   box-shadow:
-    0 0 0 1px rgba(96, 4, 16, 0.18),
-    0 0 8px rgba(124, 7, 22, 0.28),
-    0 0 14px rgba(124, 7, 22, 0.14);
+    0 0 0 1px rgba(112, 5, 19, 0.18),
+    0 0 9px rgba(152, 10, 27, 0.34),
+    0 0 16px rgba(152, 10, 27, 0.18);
 }
 
 .pulse-hotspot.is-highlighted .pulse-core {
