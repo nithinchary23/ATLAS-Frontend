@@ -23,24 +23,24 @@
 .pulse-glow {
   inset: -12%;
   background:
-    radial-gradient(circle, rgba(255, 126, 138, 0.26) 0%, rgba(243, 95, 111, 0.16) 48%, rgba(243, 95, 111, 0) 100%);
+    radial-gradient(circle, rgba(240, 30, 44, 0.3) 0%, rgba(240, 30, 44, 0.18) 48%, rgba(240, 30, 44, 0) 100%);
   filter: blur(4px);
   opacity: 0.76;
 }
 
 .pulse-core {
   background:
-    radial-gradient(circle, rgba(255, 219, 224, 0.98) 0%, rgba(255, 154, 165, 0.96) 28%, rgba(240, 91, 108, 0.94) 66%, rgba(214, 56, 77, 0.96) 100%);
-  border: 1px solid rgba(255, 222, 227, 0.4);
+    radial-gradient(circle, rgba(255, 223, 226, 0.98) 0%, rgba(248, 107, 119, 0.94) 24%, rgba(240, 30, 44, 0.98) 62%, rgba(198, 14, 27, 1) 100%);
+  border: 1px solid rgba(255, 213, 217, 0.34);
   box-shadow:
-    0 0 0 1px rgba(236, 113, 127, 0.12),
-    0 0 8px rgba(237, 104, 120, 0.24),
-    0 0 14px rgba(237, 104, 120, 0.12);
+    0 0 0 1px rgba(240, 30, 44, 0.1),
+    0 0 8px rgba(240, 30, 44, 0.22),
+    0 0 14px rgba(240, 30, 44, 0.12);
 }
 
 .pulse-hotspot.is-highlighted .pulse-core {
   box-shadow:
-    0 0 0 1px rgba(255, 205, 212, 0.2),
-    0 0 10px rgba(235, 113, 127, 0.28),
-    0 0 18px rgba(235, 113, 127, 0.16);
+    0 0 0 1px rgba(255, 214, 218, 0.18),
+    0 0 10px rgba(240, 30, 44, 0.28),
+    0 0 18px rgba(240, 30, 44, 0.16);
 }
