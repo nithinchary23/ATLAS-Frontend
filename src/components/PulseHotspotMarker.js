@@ -19,7 +19,6 @@ function PulseHotspotMarker({
   const size = Math.round(18 + clamp(normalized, 0.2, 1) * 22);
   const ringScale = highlighted ? 3.1 : 2.7;
   const ringScaleFar = highlighted ? 3.8 : 3.35;
-  const ringScaleThird = highlighted ? 4.45 : 3.95;
 
   const icon = L.divIcon({
     className: "pulse-hotspot-wrapper",
@@ -30,15 +29,10 @@ function PulseHotspotMarker({
           --pulse-size:${size}px;
           --pulse-ring-scale:${ringScale};
           --pulse-ring-scale-far:${ringScaleFar};
-          --pulse-ring-scale-third:${ringScaleThird};
         "
       >
         <span class="pulse-glow"></span>
-        <span class="pulse-blink"></span>
         <span class="pulse-core"></span>
-        <span class="pulse-ring pulse-ring-primary"></span>
-        <span class="pulse-ring pulse-ring-secondary"></span>
-        <span class="pulse-ring pulse-ring-tertiary"></span>
       </div>
     `,
     iconSize: [size * 4, size * 4],

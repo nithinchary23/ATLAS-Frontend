@@ -14,100 +14,33 @@
 }
 
 .pulse-core,
-.pulse-glow,
-.pulse-blink,
-.pulse-ring {
+.pulse-glow {
   position: absolute;
   inset: 0;
   border-radius: 999px;
 }
 
 .pulse-glow {
-  inset: -52%;
+  inset: -12%;
   background:
-    radial-gradient(circle, rgba(255, 114, 132, 0.26) 0%, rgba(255, 86, 108, 0.16) 28%, rgba(255, 74, 96, 0.08) 56%, rgba(255, 74, 96, 0) 100%);
-  filter: blur(10px);
-  opacity: 0.9;
-}
-
-.pulse-blink {
-  inset: -16%;
-  background:
-    radial-gradient(circle, rgba(255, 248, 250, 0.92) 0%, rgba(255, 208, 216, 0.74) 18%, rgba(255, 127, 144, 0.42) 44%, rgba(255, 83, 105, 0) 74%);
-  animation: hotspot-core-breathe 2.8s ease-in-out infinite;
+    radial-gradient(circle, rgba(143, 8, 24, 0.24) 0%, rgba(120, 6, 20, 0.14) 48%, rgba(120, 6, 20, 0) 100%);
+  filter: blur(4px);
+  opacity: 0.68;
 }
 
 .pulse-core {
   background:
-    radial-gradient(circle, rgba(255, 250, 251, 0.98) 0%, rgba(255, 219, 225, 0.94) 14%, rgba(255, 139, 154, 0.68) 36%, rgba(255, 87, 108, 0.4) 62%, rgba(228, 58, 81, 0.22) 100%);
-  border: 1px solid rgba(255, 226, 231, 0.74);
+    radial-gradient(circle, rgba(230, 84, 101, 0.98) 0%, rgba(186, 22, 43, 0.99) 34%, rgba(138, 7, 23, 1) 74%, rgba(92, 2, 14, 1) 100%);
+  border: 1px solid rgba(255, 183, 193, 0.18);
   box-shadow:
-    0 0 0 1px rgba(255, 142, 154, 0.18),
-    0 0 12px rgba(255, 90, 112, 0.42),
-    0 0 28px rgba(255, 90, 112, 0.2);
-}
-
-.pulse-ring {
-  border: 2px solid rgba(255, 97, 118, 0.62);
-  background: transparent;
-  box-shadow:
-    0 0 10px rgba(255, 83, 106, 0.2),
-    inset 0 0 10px rgba(255, 123, 141, 0.06);
-  animation: hotspot-radiate 3.6s linear infinite;
-  transform-origin: center;
-}
-
-.pulse-ring-secondary {
-  animation-delay: 1.15s;
-  opacity: 0.78;
-}
-
-.pulse-ring-tertiary {
-  animation-delay: 2.3s;
-  opacity: 0.58;
+    0 0 0 1px rgba(96, 4, 16, 0.18),
+    0 0 8px rgba(124, 7, 22, 0.28),
+    0 0 14px rgba(124, 7, 22, 0.14);
 }
 
 .pulse-hotspot.is-highlighted .pulse-core {
   box-shadow:
-    0 0 0 1px rgba(255, 201, 208, 0.28),
-    0 0 18px rgba(255, 118, 136, 0.54),
-    0 0 34px rgba(255, 118, 136, 0.24);
-}
-
-.pulse-hotspot.is-highlighted .pulse-ring {
-  border-color: rgba(255, 163, 176, 0.8);
-}
-
-@keyframes hotspot-radiate {
-  0% {
-    transform: scale(0.42);
-    opacity: 0;
-  }
-
-  12% {
-    opacity: 0.78;
-  }
-
-  70% {
-    transform: scale(var(--pulse-ring-scale, 2.7));
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(var(--pulse-ring-scale-third, 3.95));
-    opacity: 0;
-  }
-}
-
-@keyframes hotspot-core-breathe {
-  0%,
-  100% {
-    transform: scale(0.92);
-    opacity: 0.74;
-  }
-
-  50% {
-    transform: scale(1.08);
-    opacity: 1;
-  }
+    0 0 0 1px rgba(255, 192, 201, 0.18),
+    0 0 10px rgba(150, 10, 27, 0.34),
+    0 0 18px rgba(150, 10, 27, 0.18);
 }
