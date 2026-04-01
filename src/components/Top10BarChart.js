@@ -22,14 +22,14 @@ function Top10BarChart({ data }) {
           {
             data: cleaned.map((item) => item["Predicted Victims"]),
             backgroundColor: [
-              "#ff6b57",
-              "#f45449",
-              "#ef4444",
-              "#e64141",
-              "#dc3d3d",
-              "#d33737",
-              "#c93131",
-              "#bf2c2c"
+              "#c6182f",
+              "#bb142b",
+              "#b01228",
+              "#a40f24",
+              "#980c21",
+              "#8d091d",
+              "#820619",
+              "#760415"
             ],
             borderRadius: 999,
             borderSkipped: false,
