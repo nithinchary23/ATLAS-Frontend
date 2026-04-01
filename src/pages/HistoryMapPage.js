@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import { MapContainer, TileLayer, Circle, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import Header from "../components/Header";
+import PulseHotspotMarker from "../components/PulseHotspotMarker";
 import { getHistoricalRisk } from "../services/api";
 import "../styles/map.css";
 import "leaflet/dist/leaflet.css";
@@ -158,7 +159,7 @@ function HistoryMapPage() {
                   <h2>Observed Historical Risk Map</h2>
                 </div>
                 <p>
-                  Circle size reflects recorded historical victims aggregated by country.
+                  Pulsing markers reflect recorded historical victims aggregated by country.
                 </p>
               </div>
 
@@ -168,29 +169,17 @@ function HistoryMapPage() {
                   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
                   {historicalRows.map((item, index) => {
-                    const radius = Math.max(
-                      45000,
-                      Math.min(260000, 45000 + (item.victims / maxVictims) * 215000)
-                    );
-
                     return (
-                      <Circle
+                      <PulseHotspotMarker
                         key={`${item.country}-${index}`}
-                        center={[item.latitude, item.longitude]}
-                        radius={radius}
-                        pathOptions={{
-                          color: "#ff6a5b",
-                          fillColor: "#ff6a5b",
-                          weight: 1.6,
-                          fillOpacity: 0.28
-                        }}
+                        latitude={item.latitude}
+                        longitude={item.longitude}
+                        intensity={item.victims}
+                        maxIntensity={maxVictims}
+                        label={item.country}
                       >
-                        <Popup>
-                          <strong>{item.country}</strong>
-                          <br />
-                          Historical victims: {item.victims.toLocaleString()}
-                        </Popup>
-                      </Circle>
+                        Historical victims: {item.victims.toLocaleString()}
+                      </PulseHotspotMarker>
                     );
                   })}
                 </MapContainer>

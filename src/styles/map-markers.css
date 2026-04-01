@@ -10,43 +10,71 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .pulse-core,
+.pulse-glow,
 .pulse-ring {
   position: absolute;
   inset: 0;
   border-radius: 999px;
 }
 
+.pulse-glow {
+  inset: -35%;
+  background:
+    radial-gradient(circle, rgba(255, 149, 149, 0.42) 0%, rgba(255, 112, 112, 0.24) 35%, rgba(255, 79, 79, 0.08) 65%, rgba(255, 79, 79, 0) 100%);
+  filter: blur(8px);
+  opacity: 0.95;
+}
+
 .pulse-core {
-  background: radial-gradient(circle, rgba(255, 120, 104, 0.95) 0%, rgba(255, 74, 58, 0.92) 58%, rgba(197, 28, 28, 0.96) 100%);
-  border: 2px solid rgba(255, 214, 208, 0.82);
+  background:
+    radial-gradient(circle, rgba(255, 249, 252, 0.98) 0%, rgba(255, 188, 198, 0.96) 18%, rgba(255, 108, 124, 0.92) 45%, rgba(255, 82, 99, 0.88) 72%, rgba(222, 49, 68, 0.92) 100%);
+  border: 1px solid rgba(255, 228, 232, 0.95);
   box-shadow:
-    0 0 0 1px rgba(255, 91, 91, 0.2),
-    0 0 16px rgba(255, 72, 72, 0.42);
+    0 0 0 1px rgba(255, 131, 143, 0.28),
+    0 0 14px rgba(255, 90, 111, 0.68),
+    0 0 26px rgba(255, 86, 110, 0.34);
 }
 
 .pulse-ring {
-  border: 2px solid rgba(255, 107, 107, 0.46);
-  background: rgba(255, 82, 82, 0.1);
-  animation: hotspot-radiate 2.2s ease-out infinite;
+  border: 2px solid rgba(255, 103, 121, 0.68);
+  background: radial-gradient(circle, rgba(255, 119, 136, 0.12) 0%, rgba(255, 102, 121, 0.07) 45%, rgba(255, 102, 121, 0) 100%);
+  box-shadow: 0 0 22px rgba(255, 88, 107, 0.24);
+  animation: hotspot-radiate 3.2s ease-out infinite;
   transform-origin: center;
+}
+
+.pulse-ring-secondary {
+  animation-delay: 1.15s;
+}
+
+.pulse-hotspot.is-highlighted .pulse-core {
+  box-shadow:
+    0 0 0 1px rgba(255, 191, 198, 0.4),
+    0 0 18px rgba(255, 122, 137, 0.82),
+    0 0 34px rgba(255, 122, 137, 0.42);
+}
+
+.pulse-hotspot.is-highlighted .pulse-ring {
+  border-color: rgba(255, 175, 186, 0.78);
 }
 
 @keyframes hotspot-radiate {
   0% {
-    transform: scale(0.9);
-    opacity: 0.72;
+    transform: scale(0.72);
+    opacity: 0.78;
   }
 
   70% {
-    transform: scale(2.3);
+    transform: scale(var(--pulse-ring-scale, 2.7));
     opacity: 0;
   }
 
   100% {
-    transform: scale(2.3);
+    transform: scale(var(--pulse-ring-scale-far, 3.35));
     opacity: 0;
   }
 }

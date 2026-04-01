@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { MapContainer, TileLayer, Circle, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import Header from "../components/Header";
+import PulseHotspotMarker from "../components/PulseHotspotMarker";
 import { getFutureHotspots, getFutureRiskAreas } from "../services/api";
 import "../styles/map.css";
 import "leaflet/dist/leaflet.css";
@@ -200,36 +201,24 @@ function HotspotPage() {
                   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
                   {mapRows.map((item, index) => {
-                    const radius = Math.max(
-                      40000,
-                      Math.min(220000, 40000 + (item.riskScore / maxRisk) * 180000)
-                    );
                     const isSelected =
                       selectedCountry &&
                       item.country?.trim().toLowerCase() === selectedCountry.trim().toLowerCase();
 
                     return (
-                      <Circle
+                      <PulseHotspotMarker
                         key={`${item.country}-${index}`}
-                        center={[item.latitude, item.longitude]}
-                        radius={radius}
-                        pathOptions={{
-                          color: isSelected ? "#ffd166" : "#ff5c4d",
-                          fillColor: isSelected ? "#ffd166" : "#ff5c4d",
-                          weight: isSelected ? 2.5 : 1.5,
-                          fillOpacity: isSelected ? 0.7 : 0.36
-                        }}
+                        latitude={item.latitude}
+                        longitude={item.longitude}
+                        intensity={item.riskScore}
+                        maxIntensity={maxRisk}
+                        label={showHotspotLabels ? item.country : ""}
+                        highlighted={Boolean(isSelected)}
                       >
-                        {showHotspotLabels && (
-                          <Popup>
-                            <strong>{item.country}</strong>
-                            <br />
-                            Area: {item.areaIndex}
-                            <br />
-                            Risk score: {item.riskScore.toLocaleString()}
-                          </Popup>
-                        )}
-                      </Circle>
+                        Area: {item.areaIndex}
+                        <br />
+                        Risk score: {item.riskScore.toLocaleString()}
+                      </PulseHotspotMarker>
                     );
                   })}
                 </MapContainer>

@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
-import L from "leaflet";
+import { MapContainer, useMap, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "../styles/map-markers.css";
+import PulseHotspotMarker from "./PulseHotspotMarker";
 
 function ResizeMap() {
   const map = useMap();
@@ -93,27 +92,17 @@ function HotspotMap({ data }) {
           point.predicted_victims ??
           0
         );
-        const scale = Math.max(0.45, Math.min(1.25, riskValue / maxRisk));
-        const size = Math.round(18 + scale * 18);
-
-        const icon = L.divIcon({
-          className: "pulse-hotspot-wrapper",
-          html: `
-            <div class="pulse-hotspot" style="--pulse-size:${size}px;">
-              <span class="pulse-ring"></span>
-              <span class="pulse-core"></span>
-            </div>
-          `,
-          iconSize: [size * 2, size * 2],
-          iconAnchor: [size, size]
-        });
-
         return (
-          <Marker
+          <PulseHotspotMarker
             key={index}
-            position={[point.lat, point.lng]}
-            icon={icon}
-          />
+            latitude={point.lat}
+            longitude={point.lng}
+            intensity={riskValue}
+            maxIntensity={maxRisk}
+            label={point.Country || point.country}
+          >
+            Predicted risk: {riskValue.toLocaleString()}
+          </PulseHotspotMarker>
         );
       })}
     </MapContainer>

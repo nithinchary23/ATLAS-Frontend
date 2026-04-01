@@ -9,7 +9,7 @@ jest.mock("./components/ForecastLineChart", () => () => <div>Forecast Chart Mock
 jest.mock("react-leaflet", () => ({
   MapContainer: ({ children }) => <div>{children}</div>,
   TileLayer: () => <div>Tile Layer Mock</div>,
-  Circle: ({ children }) => <div>{children}</div>,
+  Marker: ({ children }) => <div>{children}</div>,
   Popup: ({ children }) => <div>{children}</div>,
   useMap: () => ({
     invalidateSize: jest.fn(),
