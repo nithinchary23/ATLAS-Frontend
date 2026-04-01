@@ -137,7 +137,7 @@ function Dashboard() {
                   <span className="panel-kicker">Map View</span>
                   <div className="panel-title">Predictive Hotspot Map</div>
                 </div>
-                <p>{forecastYear} projected risk centers based on forecast intensity.</p>
+                <p>Projected risk centers based on historical patterns.</p>
               </div>
               <div className="panel-frame map-frame">
                 <HotspotMap data={hotspots} />

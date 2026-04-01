@@ -1,0 +1,52 @@
+.pulse-hotspot-wrapper {
+  background: transparent;
+  border: 0;
+}
+
+.pulse-hotspot {
+  position: relative;
+  width: var(--pulse-size);
+  height: var(--pulse-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulse-core,
+.pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+}
+
+.pulse-core {
+  background: radial-gradient(circle, rgba(255, 120, 104, 0.95) 0%, rgba(255, 74, 58, 0.92) 58%, rgba(197, 28, 28, 0.96) 100%);
+  border: 2px solid rgba(255, 214, 208, 0.82);
+  box-shadow:
+    0 0 0 1px rgba(255, 91, 91, 0.2),
+    0 0 16px rgba(255, 72, 72, 0.42);
+}
+
+.pulse-ring {
+  border: 2px solid rgba(255, 107, 107, 0.46);
+  background: rgba(255, 82, 82, 0.1);
+  animation: hotspot-radiate 2.2s ease-out infinite;
+  transform-origin: center;
+}
+
+@keyframes hotspot-radiate {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.72;
+  }
+
+  70% {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+}

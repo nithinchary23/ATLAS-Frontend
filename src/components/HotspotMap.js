@@ -1,6 +1,8 @@
 import { useEffect } from "react";
-import { MapContainer, TileLayer, CircleMarker, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import "../styles/map-markers.css";
 
 function ResizeMap() {
   const map = useMap();
@@ -63,6 +65,18 @@ function HotspotMap({ data }) {
     })
     .filter((point) => Number.isFinite(point.lat) && Number.isFinite(point.lng));
 
+  const maxRisk = Math.max(
+    ...validHotspots.map((point) =>
+      Number(
+        point.risk_score ??
+        point["Predicted Victims"] ??
+        point.predicted_victims ??
+        0
+      )
+    ),
+    1
+  );
+
   return (
     <MapContainer
       center={[20, 0]}
@@ -72,19 +86,36 @@ function HotspotMap({ data }) {
       <ResizeMap />
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-      {validHotspots.map((point, index) => (
-        <CircleMarker
-          key={index}
-          center={[point.lat, point.lng]}
-          radius={8}
-          pathOptions={{
-            color: "#ff3b3b",
-            fillColor: "#ff3b3b",
-            weight: 2,
-            fillOpacity: 0.38
-          }}
-        />
-      ))}
+      {validHotspots.map((point, index) => {
+        const riskValue = Number(
+          point.risk_score ??
+          point["Predicted Victims"] ??
+          point.predicted_victims ??
+          0
+        );
+        const scale = Math.max(0.45, Math.min(1.25, riskValue / maxRisk));
+        const size = Math.round(18 + scale * 18);
+
+        const icon = L.divIcon({
+          className: "pulse-hotspot-wrapper",
+          html: `
+            <div class="pulse-hotspot" style="--pulse-size:${size}px;">
+              <span class="pulse-ring"></span>
+              <span class="pulse-core"></span>
+            </div>
+          `,
+          iconSize: [size * 2, size * 2],
+          iconAnchor: [size, size]
+        });
+
+        return (
+          <Marker
+            key={index}
+            position={[point.lat, point.lng]}
+            icon={icon}
+          />
+        );
+      })}
     </MapContainer>
   );
 }
