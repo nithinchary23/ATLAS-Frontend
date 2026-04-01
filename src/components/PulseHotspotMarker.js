@@ -33,6 +33,8 @@ function PulseHotspotMarker({
       >
         <span class="pulse-glow"></span>
         <span class="pulse-core"></span>
+        <span class="pulse-ring pulse-ring-primary"></span>
+        <span class="pulse-ring pulse-ring-secondary"></span>
       </div>
     `,
     iconSize: [size * 4, size * 4],
