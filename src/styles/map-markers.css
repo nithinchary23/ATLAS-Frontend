@@ -1,6 +1,7 @@
 .pulse-hotspot-wrapper {
   background: transparent;
   border: 0;
+  overflow: visible !important;
 }
 
 .pulse-hotspot {
@@ -11,6 +12,7 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  overflow: visible;
 }
 
 .pulse-core,
@@ -24,43 +26,47 @@
 .pulse-glow {
   inset: -12%;
   background:
-    radial-gradient(circle, rgba(240, 30, 44, 0.16) 0%, rgba(240, 30, 44, 0.08) 48%, rgba(240, 30, 44, 0) 100%);
+    radial-gradient(circle, rgba(240, 30, 44, 0.1) 0%, rgba(240, 30, 44, 0.05) 48%, rgba(240, 30, 44, 0) 100%);
   filter: blur(4px);
-  opacity: 0.52;
+  opacity: 0.34;
+  z-index: 1;
 }
 
 .pulse-core {
   background:
-    radial-gradient(circle, rgba(247, 165, 174, 0.76) 0%, rgba(242, 88, 102, 0.78) 26%, rgba(240, 30, 44, 0.84) 62%, rgba(176, 20, 34, 0.88) 100%);
-  border: 1px solid rgba(255, 213, 217, 0.18);
+    radial-gradient(circle, rgba(241, 123, 135, 0.58) 0%, rgba(240, 72, 88, 0.62) 28%, rgba(240, 30, 44, 0.68) 64%, rgba(176, 20, 34, 0.74) 100%);
+  border: 1px solid rgba(255, 213, 217, 0.08);
   box-shadow:
-    0 0 0 1px rgba(240, 30, 44, 0.06),
-    0 0 6px rgba(240, 30, 44, 0.14),
-    0 0 10px rgba(240, 30, 44, 0.08);
+    0 0 0 1px rgba(240, 30, 44, 0.03),
+    0 0 4px rgba(240, 30, 44, 0.08),
+    0 0 8px rgba(240, 30, 44, 0.04);
+  z-index: 3;
 }
 
 .pulse-ring {
-  border: 1.5px solid rgba(240, 30, 44, 0.24);
+  border: 1.5px solid rgba(240, 30, 44, 0.16);
   background: transparent;
-  box-shadow: 0 0 6px rgba(240, 30, 44, 0.04);
+  box-shadow: 0 0 4px rgba(240, 30, 44, 0.02);
   animation: hotspot-radiate 3.2s ease-out infinite;
   transform-origin: center;
+  z-index: 2;
+  will-change: transform, opacity;
 }
 
 .pulse-ring-secondary {
   animation-delay: 1.6s;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .pulse-hotspot.is-highlighted .pulse-core {
   box-shadow:
-    0 0 0 1px rgba(255, 214, 218, 0.1),
-    0 0 8px rgba(240, 30, 44, 0.18),
-    0 0 12px rgba(240, 30, 44, 0.1);
+    0 0 0 1px rgba(255, 214, 218, 0.06),
+    0 0 6px rgba(240, 30, 44, 0.12),
+    0 0 10px rgba(240, 30, 44, 0.06);
 }
 
 .pulse-hotspot.is-highlighted .pulse-ring {
-  border-color: rgba(240, 30, 44, 0.3);
+  border-color: rgba(240, 30, 44, 0.2);
 }
 
 @keyframes hotspot-radiate {
@@ -70,7 +76,7 @@
   }
 
   18% {
-    opacity: 0.28;
+    opacity: 0.24;
   }
 
   72% {
