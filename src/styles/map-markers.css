@@ -17,6 +17,7 @@
 
 .pulse-core,
 .pulse-glow,
+.pulse-aura,
 .pulse-ring {
   position: absolute;
   inset: 0;
@@ -24,68 +25,77 @@
 }
 
 .pulse-glow {
-  inset: -12%;
+  inset: -10%;
   background:
-    radial-gradient(circle, rgba(240, 30, 44, 0.1) 0%, rgba(240, 30, 44, 0.05) 48%, rgba(240, 30, 44, 0) 100%);
-  filter: blur(4px);
-  opacity: 0.34;
+    radial-gradient(circle, rgba(240, 30, 44, 0.08) 0%, rgba(240, 30, 44, 0.03) 54%, rgba(240, 30, 44, 0) 100%);
+  filter: blur(3px);
+  opacity: 0.24;
   z-index: 1;
+}
+
+.pulse-aura {
+  inset: -2%;
+  background:
+    radial-gradient(circle, rgba(240, 30, 44, 0.12) 0%, rgba(240, 30, 44, 0.04) 58%, rgba(240, 30, 44, 0) 100%);
+  opacity: 0.34;
+  z-index: 2;
 }
 
 .pulse-core {
   background:
-    radial-gradient(circle, rgba(241, 123, 135, 0.58) 0%, rgba(240, 72, 88, 0.62) 28%, rgba(240, 30, 44, 0.68) 64%, rgba(176, 20, 34, 0.74) 100%);
+    radial-gradient(circle, rgba(255, 223, 226, 0.62) 0%, rgba(246, 118, 130, 0.62) 28%, rgba(240, 30, 44, 0.66) 64%, rgba(186, 20, 34, 0.72) 100%);
   border: 1px solid rgba(255, 213, 217, 0.08);
   box-shadow:
     0 0 0 1px rgba(240, 30, 44, 0.03),
-    0 0 4px rgba(240, 30, 44, 0.08),
-    0 0 8px rgba(240, 30, 44, 0.04);
-  z-index: 3;
+    0 0 3px rgba(240, 30, 44, 0.06),
+    0 0 6px rgba(240, 30, 44, 0.03);
+  z-index: 4;
 }
 
 .pulse-ring {
-  border: 1.5px solid rgba(240, 30, 44, 0.16);
+  inset: -5%;
+  border: 1px solid rgba(240, 30, 44, 0.18);
   background: transparent;
-  box-shadow: 0 0 4px rgba(240, 30, 44, 0.02);
-  animation: hotspot-radiate 2.6s ease-out infinite;
+  box-shadow: 0 0 2px rgba(240, 30, 44, 0.02);
+  animation: hotspot-radiate 3s cubic-bezier(0.2, 0.62, 0.2, 1) infinite;
   transform-origin: center;
-  z-index: 2;
+  z-index: 3;
   will-change: transform, opacity;
 }
 
 .pulse-ring-secondary {
-  animation-delay: 1.1s;
-  opacity: 0.9;
+  animation-delay: 1.5s;
+  opacity: 0.72;
 }
 
 .pulse-hotspot.is-highlighted .pulse-core {
   box-shadow:
     0 0 0 1px rgba(255, 214, 218, 0.06),
-    0 0 6px rgba(240, 30, 44, 0.12),
-    0 0 10px rgba(240, 30, 44, 0.06);
+    0 0 5px rgba(240, 30, 44, 0.1),
+    0 0 9px rgba(240, 30, 44, 0.04);
 }
 
 .pulse-hotspot.is-highlighted .pulse-ring {
-  border-color: rgba(240, 30, 44, 0.2);
+  border-color: rgba(240, 30, 44, 0.26);
 }
 
 @keyframes hotspot-radiate {
   0% {
-    transform: scale(0.78);
+    transform: scale(0.72);
     opacity: 0;
   }
 
-  18% {
-    opacity: 0.34;
+  20% {
+    opacity: 0.28;
   }
 
   72% {
-    transform: scale(calc(var(--pulse-ring-scale, 2.7) + 0.25));
+    transform: scale(var(--pulse-ring-scale, 2.45));
     opacity: 0;
   }
 
   100% {
-    transform: scale(calc(var(--pulse-ring-scale-far, 3.35) + 0.35));
+    transform: scale(var(--pulse-ring-scale-far, 2.9));
     opacity: 0;
   }
 }
