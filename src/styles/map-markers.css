@@ -24,25 +24,25 @@
 .pulse-glow {
   inset: -12%;
   background:
-    radial-gradient(circle, rgba(240, 30, 44, 0.3) 0%, rgba(240, 30, 44, 0.18) 48%, rgba(240, 30, 44, 0) 100%);
+    radial-gradient(circle, rgba(240, 30, 44, 0.16) 0%, rgba(240, 30, 44, 0.08) 48%, rgba(240, 30, 44, 0) 100%);
   filter: blur(4px);
-  opacity: 0.76;
+  opacity: 0.52;
 }
 
 .pulse-core {
   background:
-    radial-gradient(circle, rgba(255, 223, 226, 0.98) 0%, rgba(248, 107, 119, 0.94) 24%, rgba(240, 30, 44, 0.98) 62%, rgba(198, 14, 27, 1) 100%);
-  border: 1px solid rgba(255, 213, 217, 0.34);
+    radial-gradient(circle, rgba(247, 165, 174, 0.76) 0%, rgba(242, 88, 102, 0.78) 26%, rgba(240, 30, 44, 0.84) 62%, rgba(176, 20, 34, 0.88) 100%);
+  border: 1px solid rgba(255, 213, 217, 0.18);
   box-shadow:
-    0 0 0 1px rgba(240, 30, 44, 0.1),
-    0 0 8px rgba(240, 30, 44, 0.22),
-    0 0 14px rgba(240, 30, 44, 0.12);
+    0 0 0 1px rgba(240, 30, 44, 0.06),
+    0 0 6px rgba(240, 30, 44, 0.14),
+    0 0 10px rgba(240, 30, 44, 0.08);
 }
 
 .pulse-ring {
-  border: 1.5px solid rgba(240, 30, 44, 0.42);
+  border: 1.5px solid rgba(240, 30, 44, 0.24);
   background: transparent;
-  box-shadow: 0 0 8px rgba(240, 30, 44, 0.08);
+  box-shadow: 0 0 6px rgba(240, 30, 44, 0.04);
   animation: hotspot-radiate 3.2s ease-out infinite;
   transform-origin: center;
 }
@@ -54,13 +54,13 @@
 
 .pulse-hotspot.is-highlighted .pulse-core {
   box-shadow:
-    0 0 0 1px rgba(255, 214, 218, 0.18),
-    0 0 10px rgba(240, 30, 44, 0.28),
-    0 0 18px rgba(240, 30, 44, 0.16);
+    0 0 0 1px rgba(255, 214, 218, 0.1),
+    0 0 8px rgba(240, 30, 44, 0.18),
+    0 0 12px rgba(240, 30, 44, 0.1);
 }
 
 .pulse-hotspot.is-highlighted .pulse-ring {
-  border-color: rgba(240, 30, 44, 0.54);
+  border-color: rgba(240, 30, 44, 0.3);
 }
 
 @keyframes hotspot-radiate {
@@ -70,7 +70,7 @@
   }
 
   18% {
-    opacity: 0.54;
+    opacity: 0.28;
   }
 
   72% {
