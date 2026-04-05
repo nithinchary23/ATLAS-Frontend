@@ -17,8 +17,8 @@ function PulseHotspotMarker({
 }) {
   const normalized = maxIntensity > 0 ? intensity / maxIntensity : 0;
   const size = Math.round(14 + clamp(normalized, 0.18, 1) * 16);
-  const ringScale = highlighted ? 2.8 : 2.45;
-  const ringScaleFar = highlighted ? 3.3 : 2.9;
+  const ringScale = highlighted ? 3.15 : 2.85;
+  const ringScaleFar = highlighted ? 3.9 : 3.45;
 
   const icon = L.divIcon({
     className: "pulse-hotspot-wrapper",
@@ -38,8 +38,8 @@ function PulseHotspotMarker({
         <span class="pulse-ring pulse-ring-secondary"></span>
       </div>
     `,
-    iconSize: [size * 3, size * 3],
-    iconAnchor: [Math.round(size * 1.5), Math.round(size * 1.5)]
+    iconSize: [size * 4, size * 4],
+    iconAnchor: [Math.round(size * 2), Math.round(size * 2)]
   });
 
   if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
