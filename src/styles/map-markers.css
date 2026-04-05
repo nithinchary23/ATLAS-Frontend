@@ -47,14 +47,14 @@
   border: 1.5px solid rgba(240, 30, 44, 0.16);
   background: transparent;
   box-shadow: 0 0 4px rgba(240, 30, 44, 0.02);
-  animation: hotspot-radiate 3.2s ease-out infinite;
+  animation: hotspot-radiate 2.6s ease-out infinite;
   transform-origin: center;
   z-index: 2;
   will-change: transform, opacity;
 }
 
 .pulse-ring-secondary {
-  animation-delay: 1.6s;
+  animation-delay: 1.1s;
   opacity: 0.9;
 }
 
@@ -76,16 +76,16 @@
   }
 
   18% {
-    opacity: 0.24;
+    opacity: 0.34;
   }
 
   72% {
-    transform: scale(var(--pulse-ring-scale, 2.7));
+    transform: scale(calc(var(--pulse-ring-scale, 2.7) + 0.25));
     opacity: 0;
   }
 
   100% {
-    transform: scale(var(--pulse-ring-scale-far, 3.35));
+    transform: scale(calc(var(--pulse-ring-scale-far, 3.35) + 0.35));
     opacity: 0;
   }
 }
