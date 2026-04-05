@@ -54,25 +54,41 @@
 
 .pulse-ring {
   inset: -10%;
-  border: 1.7px solid rgba(240, 30, 44, 0.34);
+  border: 1.5px solid rgba(240, 30, 44, 0.3);
   background: transparent;
   box-shadow:
-    0 0 8px rgba(240, 30, 44, 0.08),
-    inset 0 0 5px rgba(240, 30, 44, 0.04);
-  animation: hotspot-radiate 3.4s cubic-bezier(0.2, 0.62, 0.2, 1) infinite;
+    0 0 8px rgba(240, 30, 44, 0.06),
+    inset 0 0 4px rgba(240, 30, 44, 0.03);
+  animation: hotspot-radiate 6s cubic-bezier(0.2, 0.62, 0.2, 1) infinite;
   transform-origin: center;
   z-index: 3;
   will-change: transform, opacity;
 }
 
+.pulse-ring-primary {
+  inset: -8%;
+  border-width: 1.8px;
+  border-color: rgba(240, 30, 44, 0.4);
+  animation-duration: 6.4s;
+  opacity: 1;
+}
+
 .pulse-ring-secondary {
-  animation-delay: 1.15s;
-  opacity: 0.95;
+  inset: -14%;
+  border-width: 1.35px;
+  border-color: rgba(240, 30, 44, 0.3);
+  animation-duration: 7.3s;
+  animation-delay: 2.2s;
+  opacity: 0.78;
 }
 
 .pulse-ring-tertiary {
-  animation-delay: 2.3s;
-  opacity: 0.82;
+  inset: -20%;
+  border-width: 1px;
+  border-color: rgba(240, 30, 44, 0.22);
+  animation-duration: 8.2s;
+  animation-delay: 4.5s;
+  opacity: 0.58;
 }
 
 .pulse-hotspot.is-highlighted .pulse-core {
@@ -84,6 +100,14 @@
 
 .pulse-hotspot.is-highlighted .pulse-ring {
   border-color: rgba(240, 30, 44, 0.46);
+}
+
+.pulse-hotspot.is-highlighted .pulse-ring-secondary {
+  border-color: rgba(240, 30, 44, 0.38);
+}
+
+.pulse-hotspot.is-highlighted .pulse-ring-tertiary {
+  border-color: rgba(240, 30, 44, 0.3);
 }
 
 @keyframes hotspot-radiate {
